@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🙂</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a1a, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+    animation: shake 0.15s infinite alternate;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px red;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    min-height: 60px;
+    color: #ff4d4d;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff0000, #ff6a00);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes shake {
+    from { transform: translateX(-1px); }
+    to { transform: translateX(1px); }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Be honest lang 😌</h1>
+  <p id="text">Loading…</p>
+  <button onclick="newInsult()">More pa 😈</button>
+</div>
+
+<script>
+  const insults = [
+    "Laki ng ilong mo 😭",
+    "Limos fake nails 💅",
+    "Ang dumi ng bahay nyo 🏚️",
+    "Parang di ka mahal ng electric fan 🌀",
+    "asa sa magulang 🔋",
+    "Bakit parang ikaw yung amoy ulan ☔",
+    "Di ka panget, panget kalang talaga 😔",
+    "lapad nyan",
+    "type shi ng mga adik🤨",
+    "pabawas po filter iba iba mukha mo eh"
+  ];
+
+  const textEl = document.getElementById("text");
+
+  function newInsult() {
+    const random = insults[Math.floor(Math.random() * insults.length)];
+    textEl.textContent = random;
+  }
+
+  // auto change text
+  setInterval(newInsult, 2500);
+
+  newInsult();
+</script>
+
+</body>
+</html>
